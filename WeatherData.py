@@ -25,7 +25,17 @@ def get_geo_info(city):
   geocode_url = 'https://maps.googleapis.com/maps/api/geocode/json' 
   geocode_api_key = 'AIzaSyApzw_jnCwzh56U2e_1lp_UZoXxbdCUFz8'
   geocode_params = {'sensor': 'false', 'address': city,'key': geocode_api_key}
-  location = requests.get(geocode_url, params=geocode_params).json()['results'][0]['geometry']['location']
+  #location = requests.get(geocode_url, params=geocode_params).json()['results'][0]['geometry']['location']
+  try:
+    response = requests.get(geocode_url, params=geocode_params).json()
+    location = response['results'][0]['geometry']['location']
+  except:
+    if response['status'] == 'ZERO_RESULTS':
+      raise Exception("Invalid City Name: "+city)
+    elif response['status'] == 'OVER_QUERY_LIMIT':
+      raise Exception("Query Limit Exceeded")
+    else:
+      raise Exception("UNKNOWN ERROR")
   latitude = location['lat']
   longitude = location['lng']
   elevation_url = 'https://maps.googleapis.com/maps/api/elevation/json'
