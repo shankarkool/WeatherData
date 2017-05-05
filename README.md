@@ -24,3 +24,4 @@ These programs have been developed in Databricks cloud platform https://communit
 #Exceptional Handling
 - Incorrect Location
 - API QueryLimit Exceeds
+- API ERROR
