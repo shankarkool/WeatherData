@@ -20,3 +20,7 @@ These programs have been developed in Databricks cloud platform https://communit
 	  
 #ENHANCEMENTS
 - Accuracy of the prediction can be increased with huge dataset in supervised learning
+
+#Exceptional Handling
+- Incorrect Location
+- API QueryLimit Exceeds
