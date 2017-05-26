@@ -1,4 +1,4 @@
-# TOY WEATHER SIMULATOR
+# TOY WEATHER SIMULATOR #
 
 Toy weather simulator generates weather data for the given locations. It uses Machine Learning Techniques to predict the weather condition from the model.
 
